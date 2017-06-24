@@ -1,7 +1,7 @@
 <template>
   <section>
     <template v-if="post[0]">
-      <header>
+      <header class="bg-green white p2">
         <h2 class="m0">
           {{ post[0].data.title }}
         </h2>

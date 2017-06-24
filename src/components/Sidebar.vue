@@ -1,11 +1,11 @@
 <template>
   <aside :style="{width: '300px'}" class="flex-none border-right border-gray">
-    <div class="flex items-center p1">
+    <header class="flex items-center p1 bg-green white">
       <router-link :to="{ name: 'Hello' }">Home</router-link>
       <div class="flex-auto center">
         {{ title }}
       </div>
-    </div>
+    </header>
     <ol class="list-reset p0 m0">
       <li
         v-for="post in posts"

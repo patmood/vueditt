@@ -1,13 +1,14 @@
 <template>
   <div :class="{ 'child-comment': isChild }">
-    <header class="bg-darken-1">
+    <header class="p2 muted" v-on:click="toggleChildren">
+      {{ showChildren ? '[-] ' : '[+] ' }}
       {{ author }}
     </header>
-    <div>
-      <div>
+    <div v-if="showChildren">
+      <div class="p2">
         {{ body }}
       </div>
-      <template v-if="childComments.length">
+      <template v-if="childComments.length && showChildren">
         <comment
           v-for="comment in childComments"
           :key="comment.data.id"
@@ -32,6 +33,16 @@ export default {
     body: String,
     replies: [String, Object], // The last child has empty string
     isChild: Boolean,
+  },
+  data: function () {
+    return {
+      showChildren: true,
+    }
+  },
+  methods: {
+    toggleChildren: function () {
+      this.showChildren = !this.showChildren
+    },
   },
   computed: {
     childComments: function () {
