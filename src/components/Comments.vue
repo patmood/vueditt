@@ -1,21 +1,37 @@
 <template>
   <section>
-    <h2>comments</h2>
-    <ul>
-      <li v-for="comment in comments" :key="comment.data.id" class="list-reset">
-        {{ comment.data.body }}
-      </li>
-    </ul>
+    <template v-if="post[0]">
+      <header>
+        <h2 class="m0">
+          {{ post[0].data.title }}
+        </h2>
+        <div class="muted">
+          {{ post[0].data.ups }}
+        </div>
+      </header>
+    </template>
+    <div>
+      <comment
+        v-for="comment in comments"
+        :key="comment.data.id"
+        :body="comment.data.body"
+        :author="comment.data.author"
+        :replies="comment.data.replies"
+      >
+      </comment>
+    </div>
   </section>
 </template>
 
 
 <script>
+import Comment from '@/components/Comment'
+
 export default {
   name: 'content',
   data () {
     return {
-      post: null,
+      post: [],
       comments: [],
     }
   },
@@ -35,10 +51,13 @@ export default {
   watch: {
     $route: function (to, from) {
       if (to.params.id === from.params.id) return false
-      this.post = null
+      this.post = []
       this.comments = []
       this.getComments(to.params.id)
     },
+  },
+  components: {
+    comment: Comment,
   },
 }
 </script>
