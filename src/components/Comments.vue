@@ -29,6 +29,9 @@ import Comment from '@/components/Comment'
 
 export default {
   name: 'content',
+  props: {
+    postId: String,
+  },
   data () {
     return {
       post: [],
@@ -46,14 +49,14 @@ export default {
     },
   },
   created: function () {
-    this.getComments(this.$route.params.id)
+    this.getComments(this.postId)
   },
   watch: {
     $route: function (to, from) {
-      if (to.params.id === from.params.id) return false
+      if (to.params.postId === from.params.postId) return false
       this.post = []
       this.comments = []
-      this.getComments(to.params.id)
+      this.getComments(to.params.postId)
     },
   },
   components: {

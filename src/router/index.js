@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Comments from '@/components/Comments'
+import Article from '@/components/Article'
 
 Vue.use(Router)
 
@@ -14,11 +15,17 @@ export default new Router({
       component: Hello,
       children: [
         {
-          path: 'comments/:id',
+          path: 'comments/:postId',
           name: 'Comments',
           component: Comments,
+          props: true,
         },
-        // TODO: add article route here
+        {
+          path: 'article/:postId',
+          name: 'Article',
+          component: Article,
+          props: true,
+        },
       ],
     },
   ],

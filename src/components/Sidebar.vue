@@ -13,15 +13,18 @@
         class="flex border-bottom border-gray hover"
       >
         <div class="flex-auto p1">
-          <div>
+          <router-link
+            :to="{ name: post.data.is_self ? 'Comments' : 'Article', params: { postId: post.data.id }}"
+            class="center text-decoration-none color-inherit muted bg-darken-1"
+          >
             {{ post.data.title }}
-          </div>
+          </router-link>
           <div class="muted">
             {{ post.data.domain.toLowerCase() }}
           </div>
         </div>
         <router-link
-          :to="{ name: 'Comments', params: { id: post.data.id }}"
+          :to="{ name: 'Comments', params: { postId: post.data.id }}"
           class="center text-decoration-none color-inherit muted bg-darken-1"
         >
           {{ post.data.num_comments }}
