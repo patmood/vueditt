@@ -7,9 +7,9 @@ import Article from '@/components/Article'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
-      mode: 'history',
       path: '/',
       name: 'Hello',
       component: Hello,
