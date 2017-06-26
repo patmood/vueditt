@@ -15,7 +15,7 @@
         <div class="flex-auto p1">
           <router-link
             :to="{ name: post.data.is_self ? 'Comments' : 'Article', params: { postId: post.data.id }}"
-            class="center text-decoration-none color-inherit muted bg-darken-1"
+            class="text-decoration-none color-inherit"
           >
             {{ post.data.title }}
           </router-link>
