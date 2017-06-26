@@ -2,7 +2,7 @@
   <section>
     <template v-if="post[0]">
       <header class="bg-green white p2">
-        <h2 class="m0">
+        <h2 class="h2 m0">
           {{ post[0].data.title }}
         </h2>
         <div class="muted">

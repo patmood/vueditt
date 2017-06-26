@@ -20,6 +20,45 @@ body {
   /*color: #444;*/
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   color: #2c3e50;
+  background-color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  max-height: 100%;
+}
+
+a {
+  color: #07c;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-weight: normal;
+  line-height: 1.25;
+  margin-top: 1em;
+  margin-bottom: .5em;
+}
+
+h1 { font-size: 2rem }
+
+h2 { font-size: 1.5rem }
+
+h3 { font-size: 1.25rem }
+
+h4 { font-size: 1rem }
+
+h5 { font-size: .875rem }
+
+h6 { font-size: .75rem }
+
+p, dl, ol, ul, pre, blockquote {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 /* WHITESPACE */
@@ -85,6 +124,7 @@ body {
 .flex-auto { flex: 1 1 auto; }
 .items-center { align-items: center; }
 .justify-center { justify-content: center; }
+.flex-column { flex-direction: column; }
 
 /* HELPERS */
 .list-reset { list-style: none; }

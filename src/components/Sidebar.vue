@@ -1,10 +1,13 @@
 <template>
-  <aside :style="{width: '300px'}" class="flex-none border-right border-gray">
+  <aside :style="{width: '350px'}" class="flex-none border-right border-gray">
     <header class="flex items-center p1 bg-green white">
-      <router-link :to="{ name: 'Hello' }">Home</router-link>
+      <router-link :to="{ name: 'Hello' }">
+        <img class="icon muted" src="/static/img/icons/home.svg"></img>
+      </router-link>
       <div class="flex-auto center">
         {{ title }}
       </div>
+      <img class="icon muted" src="/static/img/icons/gear.svg"></img>
     </header>
     <ol class="list-reset p0 m0">
       <li
@@ -25,10 +28,11 @@
         </div>
         <router-link
           :to="{ name: 'Comments', params: { postId: post.data.id }}"
-          class="center text-decoration-none color-inherit muted bg-darken-1 flex-none flex items-center justify-center"
+          class="center text-decoration-none color-inherit muted bg-darken-1 flex-none flex items-center justify-center flex-column blue"
           :style="{width: '60px'}"
         >
-          {{ post.data.num_comments }}
+          <img class="icon" src="/static/img/icons/comment.svg"></img>
+          <span>{{ post.data.num_comments }}</span>
         </router-link>
       </li>
     </ol>
