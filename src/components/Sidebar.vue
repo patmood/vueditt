@@ -25,7 +25,8 @@
         </div>
         <router-link
           :to="{ name: 'Comments', params: { postId: post.data.id }}"
-          class="center text-decoration-none color-inherit muted bg-darken-1"
+          class="center text-decoration-none color-inherit muted bg-darken-1 flex-none flex items-center justify-center"
+          :style="{width: '60px'}"
         >
           {{ post.data.num_comments }}
         </router-link>

@@ -9,6 +9,9 @@
           {{ post[0].data.ups }}
         </div>
       </header>
+      <div v-if="post[0].data.selftext" class="black bg-darken-1 p2">
+        {{ post[0].data.selftext }}
+      </div>
     </template>
     <div>
       <comment

@@ -1,11 +1,11 @@
 <template>
   <div :class="{ 'child-comment': isChild }">
-    <header class="p2 muted" v-on:click="toggleChildren">
+    <header class="px2 py1 muted" v-on:click="toggleChildren">
       {{ showChildren ? '[-] ' : '[+] ' }}
       {{ author }}
     </header>
     <div v-if="showChildren">
-      <div class="p2">
+      <div class="px2 pb2">
         {{ body }}
       </div>
       <template v-if="childComments.length && showChildren">
