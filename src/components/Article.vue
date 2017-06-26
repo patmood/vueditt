@@ -12,8 +12,10 @@
           <a :href="postContent.canonicalLink" target="_blank">Open original</a>
         </div>
       </header>
-      <vue-markdown v-if="postContent.text" class="black bg-darken-1 p2">
-        {{ postContent.text }}
+      <vue-markdown
+        v-if="postContent.text"
+        class="black bg-darken-1 p2"
+        :source="postContent.text" >
       </vue-markdown>
     </div>
   </article>

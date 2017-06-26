@@ -60,6 +60,7 @@ code, samp {
 
 pre {
   font-size: 87.5%;
+  white-space: pre-line;
   overflow: scroll;
 }
 

@@ -1,13 +1,12 @@
 <template>
-  <div :class="{ 'child-comment': isChild }">
+  <div :class="{ 'child-comment': isChild }" v-if="body">
     <header class="px2 py1 muted" v-on:click="toggleChildren">
       {{ showChildren ? '[-] ' : '[+] ' }}
       {{ author }}
     </header>
     <div v-if="showChildren">
-      <div class="px2 pb2">
-        {{ body }}
-      </div>
+      <vue-markdown class="px2 pb2" :source="body">
+      </vue-markdown>
       <template v-if="childComments.length && showChildren">
         <comment
           v-for="comment in childComments"
@@ -25,6 +24,7 @@
 
 <script>
 import Comment from '@/components/Comment'
+import VueMarkdown from 'vue-markdown'
 
 export default {
   name: 'comment',
@@ -52,6 +52,7 @@ export default {
   },
   components: {
     comment: Comment,
+    'vue-markdown': VueMarkdown,
   },
 }
 </script>

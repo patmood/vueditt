@@ -10,8 +10,10 @@
           <a :href="post[0].data.url" target="_blank">Open original</a>
         </div>
       </header>
-      <vue-markdown v-if="post[0].data.selftext" class="black bg-darken-1 p2">
-        {{ post[0].data.selftext }}
+      <vue-markdown
+        v-if="post[0].data.selftext"
+        class="black bg-darken-1 p2"
+        :source="post[0].data.selftext">
       </vue-markdown>
     </template>
     <div>
