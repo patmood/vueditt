@@ -7,11 +7,12 @@
         </h2>
         <div class="muted">
           {{ post[0].data.ups }}
+          <a :href="post[0].data.url" target="_blank">Open original</a>
         </div>
       </header>
-      <div v-if="post[0].data.selftext" class="black bg-darken-1 p2">
+      <vue-markdown v-if="post[0].data.selftext" class="black bg-darken-1 p2">
         {{ post[0].data.selftext }}
-      </div>
+      </vue-markdown>
     </template>
     <div>
       <comment
@@ -29,6 +30,7 @@
 
 <script>
 import Comment from '@/components/Comment'
+import VueMarkdown from 'vue-markdown'
 
 export default {
   name: 'content',
@@ -64,6 +66,7 @@ export default {
   },
   components: {
     comment: Comment,
+    'vue-markdown': VueMarkdown,
   },
 }
 </script>
