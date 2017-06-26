@@ -1,16 +1,21 @@
 <template>
   <article>
-    <header class="p2 muted">
-      {{ postContent.title }}
-    </header>
-    <section class="p2">
-      <div v-if="loading">
-        Loadin....
-      </div>
-      <div v-if-else>
-        {{ postContent.summary }}
-      </div>
-    </section>
+    <div v-if="loading">
+      Loadin....
+    </div>
+    <div v-else>
+      <header class="bg-green white p2">
+        <h2 class="h2 m0">
+          {{ postContent.title }}
+        </h2>
+        <div class="muted">
+          <a :href="postContent.canonicalLink" target="_blank">Open original</a>
+        </div>
+      </header>
+      <vue-markdown v-if="postContent.text" class="black bg-darken-1 p2">
+        {{ postContent.text }}
+      </vue-markdown>
+    </div>
   </article>
 </template>
 
@@ -36,6 +41,8 @@
 //     summary: '',
 //   }
 // }
+import VueMarkdown from 'vue-markdown'
+
 export default {
   name: 'article',
   props: {
@@ -67,6 +74,9 @@ export default {
       this.loading = false
       this.getArticle(to.params.postId)
     },
+  },
+  components: {
+    'vue-markdown': VueMarkdown,
   },
 }
 </script>
