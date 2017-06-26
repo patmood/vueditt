@@ -36,6 +36,48 @@ a {
   color: #07c;
 }
 
+p, dl, ol, ul, pre, blockquote {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+code,
+pre,
+samp {
+  font-family:
+    'Roboto Mono',
+    'Source Code Pro',
+    Menlo,
+    Consolas,
+    'Liberation Mono',
+    monospace;
+}
+
+code, samp {
+  font-size: 87.5%;
+  padding: .125em;
+}
+
+pre {
+  font-size: 87.5%;
+  overflow: scroll;
+}
+
+blockquote {
+  font-size: 1.25rem;
+  font-style: italic;
+  margin-left: 0;
+}
+
+hr {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border: 0;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #ccc;
+}
+
 h1, h2, h3,
 h4, h5, h6 {
   font-weight: normal;
@@ -55,11 +97,6 @@ h4 { font-size: 1rem }
 h5 { font-size: .875rem }
 
 h6 { font-size: .75rem }
-
-p, dl, ol, ul, pre, blockquote {
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
 
 /* WHITESPACE */
 .m0 { margin: 0; }
